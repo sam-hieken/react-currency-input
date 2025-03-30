@@ -63,6 +63,8 @@ const CurrencyInput: FC<Props> = ({
   let valueDisplay = (cents ? value / 100 : value).toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
+    minimumFractionDigits: cents ? undefined : 0,
+    maximumFractionDigits: cents ? undefined : 0
   });
 
   // trim the dollar sign off if unwanted
